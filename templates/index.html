@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>YouTube Tools</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 2rem; }
+        textarea { width: 100%; height: 200px; }
+        input, select { padding: 0.5rem; margin: 0.5rem 0; }
+        button { padding: 0.5rem 1rem; }
+    </style>
+</head>
+<body>
+    <h1>YouTube Tools</h1>
+    <form method="POST">
+        <label for="url">YouTube URL:</label><br>
+        <input type="text" id="url" name="url" required><br><br>
+
+        <label for="action">Select Action:</label><br>
+        <select id="action" name="action">
+            <option value="captions">Get Captions</option>
+            <option value="metadata">Get Metadata</option>
+            <option value="timestamps">Get Timestamps</option>
+        </select><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if result %}
+        <h2>Result:</h2>
+        <textarea readonly>{{ result }}</textarea>
+    {% endif %}
+</body>
+</html>
